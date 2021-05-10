@@ -3,6 +3,10 @@
 <title>CustomDex - Simple Manga Reader using MangaDex API</title>
 <meta name="description" content="A Simple Manga Reader without Ad's">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<h5>CustomDex - A Manga Reader powered by MangaDex API</h5>
+<h3>Enter the Manga name below. Remember latest chapters are yet to be seen as mangadex is down...This is still being worked on and a few images may fail to load because of MangaDex api stuff.</h3>
+ 
 <script>
 var dm=false; // dm=true for direct mode. Does not work with current Mangadex API because of CORS. dm=false to proxy queries
 // Some shortcuts for common and generic functions
@@ -38,13 +42,11 @@ function search(){
 }
  
 function addCell(parent, text) {
-    let tmp = C("td");
-    text=text.replaceAll("[*]","<br />").replaceAll("[url=","<a href=")
-    .replaceAll("[url","<a href=").replaceAll("[/url]","</a>").replaceAll("[img]",'<img src="')
-    .replaceAll("[/img",'"/').replaceAll("[","<").replaceAll("]",">");
-    tmp.innerHTML=text;
-    parent.appendChild(tmp);
+	let tmp = C("td");
+	tmp.innerHTML=text;
+	parent.appendChild(tmp);
 }
+
  
 function populateResults(resultJson) {
     let a = D("search_results");
@@ -228,9 +230,9 @@ document.addEventListener("keydown", shortcuts);
 <body>
 <div id="view">
 <input type="button" onclick="showSearch()" value="Back to Search"/>
-<div id="view_left" onclick=movePage(1) class="view_preview"></div>
+<div id="view_left" onclick=movePage(-1) class="view_preview"></div> <!--Not very manga but still keeping it kinda ok yk...-->
 <div id="view_mid" class="view_main"></div>
-<div id="view_right" onclick=movePage(-1) class="view_preview"></div>
+<div id="view_right" onclick=movePage(1) class="view_preview"></div> <!--Not very manga but still keeping it kinda ok yk...-->
 </div>
 <div id="search">
 <input type="text" id="search_term" onkeydown="searchInput(event)"/>
