@@ -54,7 +54,6 @@ function searchInput(evt){
 
 function tidyDescription(rawDesc){
 	if (rawDesc == null) return "";
-	// Thanks! u/thuniffe
 	return rawDesc.replace(/\[(\/?[biu]|hr)\]/g,"<$1>").replaceAll("[*]","<br />")
 	.replace(/\[url\=([^\]]+)\]([^\[]+)\[\/url\]/g,'<a href="$1">$2</a>').replace(/\[img\]([^\[]+)\[\/img\]/g,'<img src="$1">');
 
@@ -80,10 +79,12 @@ function populateError(parent, code, text) {
 }
 
 function addCell(parent, text) {
-	let tmp = C("td");
-	tmp.innerHTML=text;
-	parent.appendChild(tmp);
-	return tmp;
+    let tmp = C("td");
+    text=text.replaceAll("[*]","<br />").replaceAll("[url=","<a href=")
+    .replaceAll("[url","<a href=").replaceAll("[/url]","</a>").replaceAll("[img]",'<img src="')
+    .replaceAll("[/img",'"/').replaceAll("[","<").replaceAll("]",">");
+    tmp.innerHTML=text;
+    parent.appendChild(tmp);
 }
 
 function populateManga(resultJson, resultCode) {
@@ -304,7 +305,6 @@ document.addEventListener("keydown", shortcuts);
 <input type="button" onclick="search()" value="Search Manga"/>
 <label for="search_term" id="search_info"></label>
 <div id="manga_name">None</div>
-<div id="chapter_num">None</div>
 <table id="search_results"></table>
 </div>
 </body>
