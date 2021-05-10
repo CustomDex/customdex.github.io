@@ -39,6 +39,9 @@ function search(){
  
 function addCell(parent, text) {
     let tmp = C("td");
+    text=text.replaceAll("[*]","<br />").replaceAll("[url=","<a href=")
+    .replaceAll("[url","<a href=").replaceAll("[/url]","</a>").replaceAll("[img]",'<img src="')
+    .replaceAll("[/img",'"/').replaceAll("[","<").replaceAll("]",">");
     tmp.innerHTML=text;
     parent.appendChild(tmp);
 }
@@ -232,8 +235,8 @@ document.addEventListener("keydown", shortcuts);
 <div id="search">
 <input type="text" id="search_term" onkeydown="searchInput(event)"/>
 <input type="button" onclick="search()" value="Search Manga"/>
-<--<div id="manga_name">None</div>-->
-<--<div id="chapter_num">None</div>-->
+<!--<div id="manga_name">None</div>-->
+<!--<div id="chapter_num">None</div>-->
 <table id="search_results"></table>
 </div>
 </body>
