@@ -5,4 +5,4 @@
 
 
 
-Links to Reader > bit.ly/cdexmanga || but.ly/customdex
+Links to Reader > bit.ly/cdexmanga || bit.ly/customdex
