@@ -2,3 +2,7 @@
 
 
 > Use bit.ly/customdex because thats easier tbh
+
+
+
+Links to Reader > bit.ly/cdexmanga || but.ly/customdex
