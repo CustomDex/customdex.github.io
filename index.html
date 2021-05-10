@@ -1,7 +1,7 @@
 <html>
 <head>
-<title>Jarppi's P&M Reader</title>
-<meta name="description" content="Jarppi's portable Reader for Pictures and Manga">
+<title>CustomDex - Simple Manga Reader using MangaDex API</title>
+<meta name="description" content="A Simple Manga Reader without Ad's">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
 var dm=false; // dm=true for direct mode. Does not work with current Mangadex API because of CORS. dm=false to proxy queries
@@ -232,8 +232,8 @@ document.addEventListener("keydown", shortcuts);
 <div id="search">
 <input type="text" id="search_term" onkeydown="searchInput(event)"/>
 <input type="button" onclick="search()" value="Search Manga"/>
-<div id="manga_name">None</div>
-<div id="chapter_num">None</div>
+<--<div id="manga_name">None</div>-->
+<--<div id="chapter_num">None</div>-->
 <table id="search_results"></table>
 </div>
 </body>
