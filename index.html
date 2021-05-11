@@ -44,15 +44,6 @@ var currentHash = "";
 var currentIdx = 0;
 var currentMangaId = "";
 var lastKnownSearch = "";
-	var link = document.location.href;
-
-// The length of simpledex's own url is 29 characters when the / and ? are counted
-
-var imgSrc = link.slice(29, link.length);
-
-img = document.getElementById("image");
-
-img.src = imgSrc;
 
 function searchInput(evt){
 	if (evt.keyCode == 13) {
